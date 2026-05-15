@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#00458d",
+                        "background": "#fff8f6",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#fff1eb",
+                        "outline": "#8c7166",
+                        "inverse-primary": "#ffb693",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#005ab4",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001b3e",
+                        "secondary": "#4e6073",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#cfe2f9",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed": "#d1e4fb",
+                        "primary-container": "#c45100",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-secondary-fixed-variant": "#36485b",
+                        "surface-dim": "#ecd5cc",
+                        "surface-container-highest": "#f5ded4",
+                        "tertiary-fixed-dim": "#aac7ff",
+                        "on-tertiary-container": "#fefcff",
+                        "outline-variant": "#e0c0b2",
+                        "on-background": "#251913",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#351000",
+                        "inverse-surface": "#3b2d27",
+                        "primary-fixed-dim": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "surface-container": "#ffeae1",
+                        "on-secondary-container": "#526478",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#d6e3ff",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-fixed": "#091d2e",
+                        "surface-container-high": "#fbe3da",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "primary": "#9c3f00",
+                        "on-surface-variant": "#584238",
+                        "tertiary-container": "#0073e1",
+                        "surface-bright": "#fff8f6",
+                        "surface-variant": "#f5ded4",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ffede6",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#251913",
+                        "surface": "#fff8f6"
+                    },
+                    fontFamily: {
+                        headline: ["Manrope"],
+                        display: ["Manrope"],
+                        body: ["Manrope"],
+                        label: ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/20">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-80 bg-surface-container-low dark:bg-surface-dim py-8 px-6 gap-y-6 fixed left-0 top-0 z-40">
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<div>
+<h1 class="text-display-sm font-black text-on-surface dark:text-on-surface-variant leading-tight">Concierge Onyx</h1>
+<p class="font-body font-semibold text-label-lg text-secondary">Architectural Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-y-2 mt-8">
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body font-semibold text-label-lg">Dashboard</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined" data-icon="recent_actors">recent_actors</span>
+<span class="font-body font-semibold text-label-lg">Visitor Log</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="font-body font-semibold text-label-lg">Staff Management</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl shadow-lg scale-100 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined active-nav-icon" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-body font-semibold text-label-lg">Analytics</span>
+</div>
+</nav>
+<div class="mt-auto">
+<button class="w-full py-4 px-6 bg-secondary-container text-on-secondary-container font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-secondary-container/80 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    New Registration
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-80">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-10 h-24 w-full bg-surface dark:bg-surface-dim sticky top-0 z-50 shadow-[0_24px_40px_rgba(37,25,19,0.05)]">
+<div class="flex items-center gap-2">
+<h2 class="font-headline font-bold text-headline-md tracking-[-0.02em] text-primary dark:text-primary-fixed-dim">Analytics Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-5 py-2.5 gap-3 group focus-within:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64 placeholder:text-outline/60" placeholder="Global search..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-3 text-secondary hover:bg-surface-container-highest/50 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-3 text-secondary hover:bg-surface-container-highest/50 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-10 w-px bg-outline-variant/30 mx-2"></div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover" data-alt="A professional headshot of a middle-aged corporate administrator with a confident smile, wearing a sharp charcoal suit and white shirt. The background is a blurred high-end corporate office with warm architectural lighting and glass partitions, reflecting the Concierge Onyx brand's professional and premium hospitality aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGTIi1ih3i0wHeuMi-3koluk7Sm_iJlVHNYUlOomkhKGeN9Ay0cY3snCp4FWndxX435CnW2nHW02uMfs1MRoCdPSI7m8Prsmwo0N5vhg6Pczoeg5dg76bFOpwDcwOQ1JFDi05IAgCjM7mfYPndi4lGu0fc7N2qKBINmyI1ezg_VsNd0hKCoh6PhfoUdTEFBCW_mYVNU9UwjspasUnsyNFbvjXU3emprbf2-1WXY9CbTkFgcesHCNhGuih5TVNN5sXwrM4jy8qJ07Y_"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-10 space-y-12">
+<!-- Real-time Metrics Section -->
+<section>
+<div class="flex items-end justify-between mb-8">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-[10px]">Live Operations</span>
+<h3 class="text-headline-md font-bold text-on-surface">Real-time Metrics</h3>
+</div>
+<div class="flex gap-2 items-center text-secondary text-label-md">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            Live data stream active
+                        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Current Visitors -->
+<div class="bg-surface-container p-8 rounded-xl flex flex-col justify-between h-48 group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary p-3 bg-primary/10 rounded-lg">group</span>
+</div>
+<div>
+<p class="text-secondary font-medium text-body-md">Current Visitors On-Site</p>
+<p class="text-display-md font-black text-on-surface mt-1">124</p>
+</div>
+</div>
+<!-- Overstayed Visitors -->
+<div class="bg-error-container p-8 rounded-xl flex flex-col justify-between h-48 border-l-4 border-error relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px] text-error">warning</span>
+</div>
+<div class="flex justify-between items-start relative z-10">
+<span class="material-symbols-outlined text-error p-3 bg-error/10 rounded-lg">alarm_off</span>
+</div>
+<div class="relative z-10">
+<p class="text-on-error-container font-medium text-body-md">Overstayed Visitors</p>
+<p class="text-display-md font-black text-on-error-container mt-1">08</p>
+</div>
+</div>
+<!-- Daily Visitor Count -->
+<div class="bg-surface-container p-8 rounded-xl flex flex-col justify-between h-48 group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary p-3 bg-secondary/10 rounded-lg">calendar_today</span>
+</div>
+<div>
+<p class="text-secondary font-medium text-body-md">Daily Visitor Count</p>
+<p class="text-display-md font-black text-on-surface mt-1">382</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visitor Trends & Activity Bento Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Chart Area -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-outline-variant/10">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="text-title-lg font-bold">Visitor Trends</h3>
+<p class="text-body-sm text-secondary">Hourly occupancy volume for today</p>
+</div>
+<div class="flex bg-surface-container rounded-lg p-1">
+<button class="px-4 py-1.5 text-label-md font-bold bg-surface-container-lowest rounded-md shadow-sm">Today</button>
+<button class="px-4 py-1.5 text-label-md font-medium text-secondary hover:text-primary">Weekly</button>
+</div>
+</div>
+<!-- Visual representation of a chart using bars for aesthetic fidelity -->
+<div class="h-64 flex items-end justify-between gap-3 px-2">
+<div class="w-full bg-surface-container-high rounded-t-md h-[20%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[35%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[45%]"></div>
+<div class="w-full bg-primary/20 rounded-t-md h-[70%]"></div>
+<div class="w-full bg-primary/40 rounded-t-md h-[85%]"></div>
+<div class="w-full bg-primary rounded-t-md h-[100%]"></div>
+<div class="w-full bg-primary-container rounded-t-md h-[75%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[60%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[40%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[30%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[25%]"></div>
+<div class="w-full bg-surface-container-high rounded-t-md h-[15%]"></div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] text-secondary font-bold uppercase tracking-wider">
+<span>08:00</span>
+<span>10:00</span>
+<span>12:00</span>
+<span>14:00</span>
+<span>16:00</span>
+<span>18:00</span>
+<span>20:00</span>
+</div>
+</div>
+<!-- Host Activity Side Card -->
+<div class="bg-surface-container p-8 rounded-xl">
+<h3 class="text-title-lg font-bold mb-6">Peak Host Activity</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="Executive Host 1" class="w-12 h-12 rounded-lg object-cover" data-alt="A portrait of a professional female executive in a modern workspace environment. She is smiling confidently, dressed in a professional navy blazer. The lighting is bright and natural, coming from large office windows, emphasizing a high-end corporate hospitality atmosphere consistent with a luxury concierge service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlp_t40b-hhO4iM5JLa5RKyOVBGXW0e-ldj-muP4oQMIBLXvvXpn21A5oDRFfD4462R5BNNsX1eXyD-PdE73pFZaw1symzzmWaU5lBikDMH_EpoQerTMYnIHkSWmnu67HhH7YMgRxJ08EIb3PfMu-wkSSzoVe16Tc8XonBdfbzpXPvQCn0ywOXaF7S6BhY1svNO6Xsk5A21Pi3F6yLo6n95r6OHp0ijdxlMkU16DKDWhWGQaygpIczM2FQFDzY77L2WDTlWqd13YP-"/>
+<div class="flex-1">
+<p class="text-body-md font-bold leading-none">Sarah Jenkins</p>
+<p class="text-body-sm text-secondary">Creative Director</p>
+</div>
+<div class="text-right">
+<p class="text-label-lg font-bold text-primary">14</p>
+<p class="text-[10px] text-secondary uppercase font-black">Visits</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Executive Host 2" class="w-12 h-12 rounded-lg object-cover" data-alt="A portrait of a male corporate professional with a friendly yet authoritative expression. He is wearing a tailored grey suit. The setting is a minimalist architectural hallway with warm wood accents and soft overhead lighting, echoing the premium and trustworthy identity of the Concierge Onyx brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaHS4LXeTKyiZi3X2dPrdAzPPJhstxahA0Jow42X5I3HxQSLzqDZWJOfJWZWjChq-cBew8z09NTLlrSDRHM0DU_9ilBaEFdhbXP6vRGGjjP8U5y_J1ybZyyguenFCs1dYB3ZI8Y1EIVMRXUuOsEX9AorY5VEP9uYNwM4iPKxLLKO4dHLiLSjQEcz7J84icZS9YhwMvnX5PkGm6u8tXtKLOWUSTslEjzDFSp-37Y_nEsk6v5VFW9S9Yg7TlWFgvRonwWQ88poqpTMIq"/>
+<div class="flex-1">
+<p class="text-body-md font-bold leading-none">Marcus Thorne</p>
+<p class="text-body-sm text-secondary">Chief Operations</p>
+</div>
+<div class="text-right">
+<p class="text-label-lg font-bold text-primary">11</p>
+<p class="text-[10px] text-secondary uppercase font-black">Visits</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Executive Host 3" class="w-12 h-12 rounded-lg object-cover" data-alt="A professional headshot of a smiling woman in business attire, set against a background of a clean, modern corporate lobby with soft focused light. She exudes competence and hospitality, perfectly aligning with the architectural concierge theme of high-end service and professional authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYqT2OVcbop0ba-god9h50GJuB96AE_pFCbO4JMaQOVdDRByko2aj1YlAsR9gzSu3goaKH-OOLHVDZWFupskn0fbZF-bNOoRYd69ETxUfedZCoF_UtSgSNmhFs4AbOE5DOYltVVhIFwdy_XHNeENxJS59O3v3oWWTCudrU2fnLA_SLtulwclr3ThKSC1u-YYfx9XyiTzvJxMXTj0_jP18MP-sI1aRXS_8ReES6-91L3_YQFdABAgijNWbjTC-GPJwIO534HDr1O445"/>
+<div class="flex-1">
+<p class="text-body-md font-bold leading-none">Elena Rodriguez</p>
+<p class="text-body-sm text-secondary">Lead Counsel</p>
+</div>
+<div class="text-right">
+<p class="text-label-lg font-bold text-primary">09</p>
+<p class="text-[10px] text-secondary uppercase font-black">Visits</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 text-primary font-bold text-label-lg border border-primary/20 rounded-xl hover:bg-primary/5 transition-colors">
+                            View All Hosts
+                        </button>
+</div>
+</section>
+<!-- Generate Reports Section -->
+<section class="bg-surface-container-high rounded-2xl p-10 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] -mr-20 -mt-20">description</span>
+</div>
+<div class="relative z-10">
+<div class="mb-10">
+<h3 class="text-headline-sm font-extrabold text-on-surface">Generate Reports</h3>
+<p class="text-body-md text-on-surface-variant max-w-2xl">Create customized data exports for audits and compliance. Select your parameters below to generate a detailed summary of building activity.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+<div class="md:col-span-1 space-y-2">
+<label class="text-label-md font-bold text-secondary px-1">Report Type</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl h-14 px-4 text-body-md focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Full Audit Log</option>
+<option>Security Summary</option>
+<option>Host Activity Report</option>
+<option>Overstay Analysis</option>
+</select>
+</div>
+<div class="md:col-span-1 space-y-2">
+<label class="text-label-md font-bold text-secondary px-1">Date Range</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl h-14 px-4 text-body-md focus:ring-2 focus:ring-primary/20" readonly="" type="text" value="Last 7 Days"/>
+<span class="material-symbols-outlined absolute right-4 top-4 text-outline">calendar_month</span>
+</div>
+</div>
+<div class="md:col-span-1 space-y-2">
+<label class="text-label-md font-bold text-secondary px-1">Format</label>
+<div class="flex bg-surface-container-lowest p-1 rounded-xl h-14">
+<button class="flex-1 rounded-lg bg-primary text-on-primary font-bold text-label-md">PDF</button>
+<button class="flex-1 rounded-lg text-secondary font-bold text-label-md hover:bg-surface-container-highest/50">Excel</button>
+</div>
+</div>
+<div class="md:col-span-1">
+<button class="w-full h-14 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">download</span>
+                                    Generate Report
+                                </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

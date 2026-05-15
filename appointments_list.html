@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appointments - Concierge Onyx</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#0073e1",
+                        "on-secondary-fixed-variant": "#36485b",
+                        "primary-container": "#c45100",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "background": "#fff8f6",
+                        "on-secondary-fixed": "#091d2e",
+                        "on-tertiary-container": "#fefcff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d6e3ff",
+                        "surface-bright": "#fff8f6",
+                        "on-surface-variant": "#584238",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#aac7ff",
+                        "on-surface": "#251913",
+                        "on-secondary-container": "#526478",
+                        "primary": "#9c3f00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary": "#4e6073",
+                        "surface-tint": "#a04100",
+                        "surface-container-low": "#fff1eb",
+                        "inverse-surface": "#3b2d27",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#cfe2f9",
+                        "error": "#ba1a1a",
+                        "on-background": "#251913",
+                        "surface-variant": "#f5ded4",
+                        "inverse-primary": "#ffb693",
+                        "outline": "#8c7166",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-on-surface": "#ffede6",
+                        "on-tertiary-fixed-variant": "#00458d",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#fbe3da",
+                        "surface": "#fff8f6",
+                        "on-primary-fixed": "#351000",
+                        "on-tertiary-fixed": "#001b3e",
+                        "primary-fixed-dim": "#ffb693",
+                        "outline-variant": "#e0c0b2",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#005ab4",
+                        "surface-container-highest": "#f5ded4",
+                        "on-primary-container": "#fffbff",
+                        "surface-dim": "#ecd5cc",
+                        "surface-container": "#ffeae1",
+                        "secondary-fixed": "#d1e4fb"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e0c0b2; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex overflow-hidden">
+<!-- SideNavBar (The Anchor) -->
+<aside class="hidden md:flex flex-col h-screen w-80 bg-surface-container-low dark:bg-surface-dim py-8 px-6 gap-y-8 z-30">
+<div class="flex items-center gap-x-4 mb-4">
+<div class="w-12 h-12 bg-primary flex items-center justify-center rounded-xl">
+<span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h1 class="text-display-sm font-black text-on-surface dark:text-on-surface-variant tracking-tighter">Concierge Onyx</h1>
+<p class="font-body font-semibold text-label-md text-secondary opacity-70">Architectural Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-x-4 px-4 py-3.5 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-body font-semibold text-label-lg">Dashboard</span>
+</a>
+<!-- Visitor Log -->
+<a class="flex items-center gap-x-4 px-4 py-3.5 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">recent_actors</span>
+<span class="font-body font-semibold text-label-lg">Visitor Log</span>
+</a>
+<!-- Staff Management (ACTIVE TAB) -->
+<a class="flex items-center gap-x-4 px-4 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl shadow-lg scale-100 active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">badge</span>
+<span class="font-body font-semibold text-label-lg">Staff Management</span>
+</a>
+<!-- Analytics -->
+<a class="flex items-center gap-x-4 px-4 py-3.5 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">analytics</span>
+<span class="font-body font-semibold text-label-lg">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-surface-container-highest text-on-surface font-bold py-4 rounded-xl flex items-center justify-center gap-x-2 active:scale-98 transition-transform duration-200">
+<span class="material-symbols-outlined">add_circle</span>
+                New Registration
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-10 h-24 w-full bg-surface dark:bg-surface-dim z-20">
+<div class="flex items-center gap-x-8">
+<h2 class="font-headline font-bold text-headline-md tracking-[-0.02em] text-primary">Appointments</h2>
+<!-- Search Bar -->
+<div class="relative hidden lg:block w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary opacity-60">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-full pl-12 pr-6 py-3 text-on-surface placeholder:text-secondary/50 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search appointments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-x-6">
+<div class="flex items-center gap-x-3 text-secondary">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant opacity-20"></div>
+<div class="flex items-center gap-x-3">
+<div class="text-right">
+<p class="font-bold text-on-surface text-label-lg leading-tight">Admin User</p>
+<p class="text-xs text-secondary opacity-70">Lobby Manager</p>
+</div>
+<img alt="Administrator Profile" class="w-12 h-12 rounded-xl object-cover shadow-sm" data-alt="A professional headshot of a concierge manager in a modern corporate setting. He is wearing a tailored charcoal suit and a crisp white shirt, exuding warmth and professional authority. The background consists of a blurred high-end architectural lobby with soft, warm wooden accents and modern minimalist lighting. The image captures a light-mode aesthetic with clean, bright exposure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKv9hydN0ybePgWJb1_EzcNtq8m-J9ra40s1fzag5Pt8gJ5eWlieWa2NqzaEK5s8mNyZ5whfOQDNYUjXwvqs1plmSINDWpcYf5VbZWWfPrKhK_W1rjGnXFNbd3I3zrf-h-sTnjtOGvqkH6tu3Zy9UrcYQMNVFMPtn6BprNRoGBodMHPcWVQZ7TX5zeIpBA_WdsOc2C-Q4D0nv7XqAtNizO1kyYUFQJG7rq4vxBTaVqMgLDbxR3E9pDi-IfDEiMc_0EBBdDEmGmBPc7"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<section class="flex-1 overflow-y-auto px-10 pb-10 space-y-8">
+<!-- Appointment Stats Grid (Bento Style) -->
+<div class="grid grid-cols-1 gap-6 pt-2 md:grid-cols-2">
+<div class="col-span-1 bg-surface-container p-6 rounded-[2rem] flex flex-col justify-between hover:bg-surface-container-high transition-colors duration-300">
+<div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<div class="mt-8">
+<p class="text-secondary font-semibold text-label-md">Total Today</p>
+<h3 class="text-display-sm font-black text-on-surface mt-1">24</h3>
+</div>
+</div>
+<div class="col-span-1 bg-primary text-on-primary p-6 rounded-[2rem] flex flex-col justify-between shadow-[0_20px_50px_rgba(156,63,0,0.2)]">
+<div class="w-12 h-12 bg-primary-container rounded-2xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+</div>
+<div class="mt-8">
+<p class="text-white/80 font-semibold text-label-md">Upcoming</p>
+<h3 class="text-display-sm font-black mt-1">08</h3>
+</div>
+</div>
+</div>
+<!-- Appointments Table Container -->
+<div class="rounded-[2.5rem] overflow-hidden bg-white">
+<div class="p-8 flex justify-between items-center border-b border-outline-variant/10">
+<div>
+<h3 class="text-headline-sm font-bold text-on-surface tracking-tight">Active Appointments</h3>
+<p class="text-secondary text-body-sm">Manage scheduled visitors and check-in procedures</p>
+</div>
+<div class="flex gap-x-3">
+<button class="px-5 py-2.5 rounded-full bg-white text-secondary font-bold text-label-lg flex items-center gap-x-2 border border-outline-variant/20 hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-5 py-2.5 rounded-full bg-white text-secondary font-bold text-label-lg flex items-center gap-x-2 border border-outline-variant/20 hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-secondary font-bold text-label-md uppercase tracking-wider">
+<th class="px-8 py-6">Visitor Name</th>
+<th class="px-8 py-6">Company</th>
+<th class="px-8 py-6">Host</th>
+<th class="px-8 py-6">Time</th>
+<th class="px-8 py-6">Status</th>
+<th class="px-8 py-6 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Entry 1 -->
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">
+                                            AM
+                                        </div>
+<span class="font-bold text-on-surface text-title-md">Alexander Mitchell</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant font-medium">Lumina Tech Solutions</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-2">
+<span class="material-symbols-outlined text-primary text-lg">person</span>
+<span class="text-on-surface-variant">Sarah Jenkins</span>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-primary font-bold">10:30 AM</td>
+<td class="px-8 py-6">
+<span class="px-4 py-1.5 rounded-full bg-tertiary-container/10 text-tertiary font-bold text-xs uppercase tracking-widest">Confirmed</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-bold text-label-md shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-95 transition-all">
+                                        Check In
+                                    </button>
+</td>
+</tr>
+<!-- Entry 2 -->
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">
+                                            EW
+                                        </div>
+<span class="font-bold text-on-surface text-title-md">Eleanor Wright</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant font-medium">Design Anthology Co.</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-2">
+<span class="material-symbols-outlined text-primary text-lg">person</span>
+<span class="text-on-surface-variant">Marcus Thorne</span>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-primary font-bold">11:15 AM</td>
+<td class="px-8 py-6">
+<span class="px-4 py-1.5 rounded-full bg-error-container/40 text-error font-bold text-xs uppercase tracking-widest">Arriving Soon</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-bold text-label-md shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-95 transition-all">
+                                        Check In
+                                    </button>
+</td>
+</tr>
+<!-- Entry 3 -->
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">
+                                            DK
+                                        </div>
+<span class="font-bold text-on-surface text-title-md">David Kovic</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant font-medium">Global Logistics Group</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-2">
+<span class="material-symbols-outlined text-primary text-lg">person</span>
+<span class="text-on-surface-variant">Jessica Lee</span>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-primary font-bold">01:45 PM</td>
+<td class="px-8 py-6">
+<span class="px-4 py-1.5 rounded-full bg-outline-variant/30 text-secondary font-bold text-xs uppercase tracking-widest">Scheduled</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-bold text-label-md shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-95 transition-all">
+                                        Check In
+                                    </button>
+</td>
+</tr>
+<!-- Entry 4 -->
+<tr class="group hover:bg-surface-container transition-all duration-200">
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-bold">
+                                            SR
+                                        </div>
+<span class="font-bold text-on-surface text-title-md">Sophia Rodriguez</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant font-medium">Freelance Consultant</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-x-2">
+<span class="material-symbols-outlined text-primary text-lg">person</span>
+<span class="text-on-surface-variant">David Chen</span>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-primary font-bold">02:30 PM</td>
+<td class="px-8 py-6">
+<span class="px-4 py-1.5 rounded-full bg-outline-variant/30 text-secondary font-bold text-xs uppercase tracking-widest">Scheduled</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-bold text-label-md shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-95 transition-all">
+                                        Check In
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-8 py-6 flex justify-between items-center bg-white">
+<p class="text-secondary text-body-sm font-medium">Showing <span class="text-on-surface font-bold">4</span> of <span class="text-on-surface font-bold">24</span> appointments</p>
+<div class="flex items-center gap-x-2">
+<button class="p-2 rounded-full border border-outline-variant/20 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">chevron_left</span>
+</button>
+<div class="flex gap-x-1 px-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs">1</span>
+<span class="w-8 h-8 rounded-full hover:bg-surface-container-low text-on-surface flex items-center justify-center font-bold text-xs cursor-pointer transition-all">2</span>
+<span class="w-8 h-8 rounded-full hover:bg-surface-container-low text-on-surface flex items-center justify-center font-bold text-xs cursor-pointer transition-all">3</span>
+</div>
+<button class="p-2 rounded-full border border-outline-variant/20 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Suppressed on Details, but visible on Dashboard/List as per rules) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl shadow-[0_24px_40px_rgba(156,63,0,0.4)] flex items-center justify-center group active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</body></html>

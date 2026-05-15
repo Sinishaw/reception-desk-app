@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visitor Checkout - Concierge Onyx</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#36485b",
+                        "surface-dim": "#ecd5cc",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#cfe2f9",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed": "#d1e4fb",
+                        "primary-container": "#c45100",
+                        "on-primary-fixed": "#351000",
+                        "inverse-surface": "#3b2d27",
+                        "primary-fixed-dim": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#aac7ff",
+                        "on-tertiary-container": "#fefcff",
+                        "outline-variant": "#e0c0b2",
+                        "on-background": "#251913",
+                        "surface-container-highest": "#f5ded4",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#fff1eb",
+                        "outline": "#8c7166",
+                        "on-tertiary-fixed-variant": "#00458d",
+                        "background": "#fff8f6",
+                        "secondary": "#4e6073",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#001b3e",
+                        "tertiary": "#005ab4",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#f5ded4",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ffede6",
+                        "tertiary-container": "#0073e1",
+                        "surface-bright": "#fff8f6",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "primary": "#9c3f00",
+                        "on-surface-variant": "#584238",
+                        "surface": "#fff8f6",
+                        "on-surface": "#251913",
+                        "tertiary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#526478",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ffeae1",
+                        "surface-container-high": "#fbe3da",
+                        "on-secondary-fixed": "#091d2e",
+                        "on-primary-container": "#fffbff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 234, 225, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary/20">
+<div class="flex min-h-screen">
+<!-- Standardized SideNavBar from Screen 26 -->
+<aside class="hidden md:flex flex-col h-screen w-80 bg-surface-container-low dark:bg-surface-dim py-8 px-6 gap-y-6 fixed left-0 top-0 z-40">
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-on-surface dark:text-on-surface-variant leading-tight">Concierge Onyx</h1>
+<p class="font-body font-semibold text-xs text-secondary">Architectural Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-y-2 mt-8">
+<!-- Dashboard (Active) -->
+<div class="flex items-center gap-4 px-4 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl shadow-lg scale-100 active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body font-semibold text-sm">Dashboard</span>
+</div>
+<!-- Visitor Log -->
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">recent_actors</span>
+<span class="font-body font-semibold text-sm">Visitor Log</span>
+</div>
+<!-- Staff Management -->
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-body font-semibold text-sm">Staff Management</span>
+</div>
+<!-- Analytics -->
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body font-semibold text-sm">Analytics</span>
+</div>
+</nav>
+<div class="mt-auto">
+<button class="w-full py-4 px-6 bg-secondary-container text-on-secondary-container font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-secondary-container/80 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+            New Registration
+        </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-80">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center px-10 h-16 w-full bg-[#fff8f6] dark:bg-slate-950 sticky top-0 z-50 shadow-[0_24px_40px_rgba(37,25,19,0.05)]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-[#251913] dark:text-orange-50 tracking-tight font-['Manrope']">Concierge Onyx</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-secondary hover:bg-[#ffeae1] p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:bg-[#ffeae1] p-2 rounded-full transition-colors">help_outline</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd6XlcirDrVmhFJ6ZczvaATMYru4F-beBqLxnXLgTAiV1fnrTCui6VYQZSt2gRV_DlCLH0ojqXaW94afI0MzpEMZXxjMm4phzNcuWlEOvYagjs6ezpRe0ckHC-YMNRc6SXVy381fu7Q2UEmKAJkA2fQ3ws-3KFyZhHSKNszOclvIa6RB8FEWybWOBP-G9IYkRjRVCJgyDqulIIghR5-FSU5weGXTW8mi9LLSu0qRhX1Y4o1KQ0VQCWZHtEenozx12Hsgf6HOqvb2HQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-8 px-10 pb-12 min-h-screen">
+<div class="max-w-3xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="text-4xl font-extrabold text-on-background tracking-tighter mb-2">Visitor Checkout</h1>
+<p class="text-secondary font-medium text-lg">Review details and finalize the departure for the current visitor.</p>
+</div>
+<!-- Form Container -->
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-10">
+<!-- Visitor Identity (Card) -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-6 shadow-[0_8px_32px_rgba(0,0,0,0.02)]">
+<div class="h-16 w-16 bg-primary-fixed rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>person</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-on-surface">Alexander Sterling</h3>
+<p class="text-sm text-secondary">Chief Technology Officer, Global Dynamics</p>
+<div class="mt-1 flex items-center gap-2 text-xs text-secondary/60 font-semibold uppercase tracking-wider">
+<span class="">Checked in: 09:14 AM</span>
+<span class="h-1 w-1 bg-outline-variant rounded-full"></span>
+<span class="">Escort: Sarah Miller</span>
+</div>
+</div>
+</div>
+<!-- Checkout Process -->
+<div class="space-y-8">
+<!-- Badge Return Toggle -->
+<div class="flex items-center justify-between p-6 bg-surface-container rounded-2xl">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Visitor Badge Returned</h4>
+<p class="text-sm text-secondary">Confirm physical badge collected at desk</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-8 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Departure Notes -->
+<div class="space-y-3">
+<label class="block text-sm font-bold text-on-surface-variant ml-1">Departure Notes</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-2xl p-4 text-on-surface placeholder:text-secondary/50 focus:ring-2 focus:ring-primary-fixed transition-all" placeholder="Add any feedback, lost items reported, or follow-up requirements..." rows="4"></textarea>
+</div>
+</div>
+<!-- Signature Badge Preview Component -->
+<div class="glass-panel p-6 rounded-2xl border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Digital Record Preview</span>
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<p class="text-[11px] text-secondary/70 uppercase tracking-widest font-bold">Status</p>
+<p class="text-xl font-bold text-on-surface">Departed</p>
+</div>
+<div class="text-right">
+<p class="text-[11px] text-secondary/70 uppercase tracking-widest font-bold">Timestamp</p>
+<p class="text-lg font-medium text-on-surface">14:42:08</p>
+</div>
+</div>
+</div>
+<!-- Final Actions -->
+<div class="flex items-center gap-4 pt-4">
+<button class="flex-1 py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-2xl font-bold text-lg shadow-[0_12px_24px_rgba(156,63,0,0.25)] hover:scale-[0.99] active:scale-[0.97] transition-all duration-200">
+                        Finalize Checkout
+                    </button>
+<button class="px-8 py-5 text-secondary font-bold hover:bg-surface-variant/30 rounded-2xl transition-colors">
+                        Cancel
+                    </button>
+</div>
+</div>
+<!-- Footer Compliance -->
+<div class="mt-8 text-center">
+<p class="text-xs text-secondary/50 font-medium">All checkouts are logged for security and fire safety protocols. Concierge Onyx v2.4.0</p>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Contextual Decoration -->
+<div class="fixed -bottom-24 -right-24 w-96 h-96 bg-primary opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
+</body></html>

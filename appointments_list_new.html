@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Concierge Onyx | Appointment Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#aac7ff",
+                    "surface": "#fff8f6",
+                    "inverse-primary": "#ffb693",
+                    "surface-variant": "#f5ded4",
+                    "outline": "#8c7166",
+                    "on-error": "#ffffff",
+                    "primary-container": "#c45100",
+                    "on-secondary-container": "#526478",
+                    "on-background": "#251913",
+                    "surface-dim": "#ecd5cc",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#251913",
+                    "surface-tint": "#a04100",
+                    "tertiary": "#005ab4",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#ffede6",
+                    "surface-container": "#ffeae1",
+                    "outline-variant": "#e0c0b2",
+                    "tertiary-fixed": "#d6e3ff",
+                    "primary-fixed": "#ffdbcc",
+                    "on-secondary-fixed": "#091d2e",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#584238",
+                    "primary": "#9c3f00",
+                    "surface-bright": "#fff8f6",
+                    "on-tertiary-fixed": "#001b3e",
+                    "on-primary-fixed": "#351000",
+                    "surface-container-highest": "#f5ded4",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#00458d",
+                    "on-tertiary-container": "#fefcff",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-fixed-dim": "#b5c8df",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#0073e1",
+                    "error": "#ba1a1a",
+                    "background": "#fff8f6",
+                    "surface-container-high": "#fbe3da",
+                    "secondary": "#4e6073",
+                    "on-secondary-fixed-variant": "#36485b",
+                    "secondary-container": "#cfe2f9",
+                    "surface-container-low": "#fff1eb",
+                    "secondary-fixed": "#d1e4fb",
+                    "inverse-surface": "#3b2d27"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "display": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex overflow-hidden">
+<!-- SideNavBar Integration -->
+<aside class="docked left-0 h-screen w-80 bg-surface-container-low dark:bg-surface-dim flex flex-col py-8 px-6 gap-y-6 flex-shrink-0 z-40 overflow-y-auto">
+<div class="flex flex-col gap-1">
+<h1 class="text-display-sm font-black text-on-surface dark:text-on-surface-variant tracking-tighter">Concierge Onyx</h1>
+<p class="font-body font-semibold text-label-lg text-secondary opacity-60">Architectural Concierge</p>
+</div>
+<nav class="flex flex-col gap-y-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 font-body font-semibold text-label-lg rounded-xl group transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 font-body font-semibold text-label-lg rounded-xl group transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">recent_actors</span>
+<span>Visitor Log</span>
+</a>
+<!-- Active State: Staff Management (Determined as closest match for Appointments) -->
+<a class="flex items-center gap-4 px-4 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl shadow-lg font-body font-semibold text-label-lg scale-100 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px] material-symbols-fill">badge</span>
+<span>Staff Management</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 font-body font-semibold text-label-lg rounded-xl group transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+<span>Analytics</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full py-4 px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-label-lg rounded-xl shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+<span>New Registration</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- TopAppBar Integration -->
+<header class="docked full-width top-0 z-30 bg-surface dark:bg-surface-dim flex justify-between items-center px-10 h-24 w-full shadow-[0_24px_40px_rgba(37,25,19,0.05)] border-none">
+<div class="flex items-center gap-8">
+<h2 class="font-headline font-bold text-headline-md tracking-[-0.02em] text-primary dark:text-primary-fixed-dim">Appointments</h2>
+</div>
+<div class="flex items-center gap-6 flex-1 max-w-xl mx-12">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-12 bg-surface-container-highest border-none rounded-xl pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-on-surface-variant/50" placeholder="Filter by name, company, or host..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-highest/50 transition-all duration-300 rounded-full active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-highest/50 transition-all duration-300 rounded-full active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden ml-2 ring-2 ring-primary-fixed">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="A professional headshot of an administrator in a high-end corporate setting. The lighting is soft and warm, reflecting the architectural concierge aesthetic with subtle hints of wood and glass in the blurred background. The subject wears professional attire, conveying expertise and hospitality. The image features high clarity and a modern, premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt4eMNRCxC2hK1TtWC2kV7C0gOMH7GG3C-I-v5rwd0WWh_dsX3YZp7KflD3sc_p9ErgAGFWDaatY1RBj5_iNR0-kQOs4_JR-vJwXXjfEkJZvUneKC1eBYJsBnw9moAXeJoAgz8oYjBPXk_9b1Nbc_QBb5P62SOF0By9lh5odUGgSgi3cUrv1DyT5PLdKqJKHXyrUVQNOskXboU2MlTnOlpbrQuekzza6knM8KzeAxalcKf6cy-BXJHDWuSUTvw37P3LD9vh1wtlWKL"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto p-10 bg-surface">
+<!-- Analytical Metric Cards -->
+<div class="flex gap-8 mb-12">
+<div class="flex-1 bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_24px_rgba(37,25,19,0.02)] flex items-center justify-between border-none group hover:bg-surface-container transition-colors duration-300">
+<div class="space-y-1">
+<p class="text-secondary font-semibold text-label-lg uppercase tracking-wider opacity-60">Total Today</p>
+<h3 class="text-display-sm font-black text-on-surface">24</h3>
+</div>
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-2xl text-primary-container group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[32px] material-symbols-fill">calendar_today</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_24px_rgba(37,25,19,0.02)] flex items-center justify-between border-none group hover:bg-surface-container transition-colors duration-300">
+<div class="space-y-1">
+<p class="text-secondary font-semibold text-label-lg uppercase tracking-wider opacity-60">Upcoming</p>
+<h3 class="text-display-sm font-black text-on-surface">08</h3>
+</div>
+<div class="w-16 h-16 bg-secondary-container flex items-center justify-center rounded-2xl text-on-secondary-container group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[32px] material-symbols-fill">schedule</span>
+</div>
+</div>
+<!-- Spacer for Asymmetric Look -->
+<div class="flex-[0.5]"></div>
+</div>
+<!-- Appointments List -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_40px_rgba(37,25,19,0.04)]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-5 text-label-lg font-bold text-secondary uppercase tracking-widest opacity-50">Visitor Name</th>
+<th class="px-8 py-5 text-label-lg font-bold text-secondary uppercase tracking-widest opacity-50">Company</th>
+<th class="px-8 py-5 text-label-lg font-bold text-secondary uppercase tracking-widest opacity-50">Host</th>
+<th class="px-8 py-5 text-label-lg font-bold text-secondary uppercase tracking-widest opacity-50">Time</th>
+<th class="px-8 py-5 text-label-lg font-bold text-secondary uppercase tracking-widest opacity-50">Status</th>
+<th class="px-8 py-5 text-label-lg font-bold text-secondary uppercase tracking-widest opacity-50 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-title-md">
+                                        AM
+                                    </div>
+<div>
+<p class="font-bold text-on-surface text-title-md">Adeline Miller</p>
+<p class="text-body-sm text-secondary opacity-70">adeline.m@gmail.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-semibold text-on-surface">Stellar Designs Co.</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest overflow-hidden ring-1 ring-outline-variant/30">
+<img alt="Host Profile" data-alt="Close up portrait of a smiling executive woman in a bright modern office with warm architectural wood paneling and large windows, captured with soft depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj3cDSO9WljUE8L0YhfW9S_v21H1zqTfos1bfVNBAx--PUp-vaL84sayAseNuwRE2yC8AgYVsWG8nWUEQgBEzTn00N9gNibVBko7gU0GNYISsYMh9NGGem7di8QXbVT5Ggb8P0dFjJQ6sZ2GSoFHCeKJ6fylGqWYxBlg8-CDaBW7Gd4hz80WRkHuDFYp6CAXhH-3d9Ga7-xlNiEq-0b6Mg8VFic1BEwjv4ULz6QhxeapwxpmELD6pRxAkouxFi2aJ1srL813zrSQki"/>
+</div>
+<span class="text-on-surface font-medium">Sarah Jenkins</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface font-medium">09:30 AM</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm font-bold uppercase tracking-tight">Confirmed</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center justify-end gap-3">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-5 py-2 rounded-lg font-bold text-label-md shadow-md active:scale-95 transition-all">Check In</button>
+<button class="text-secondary font-semibold text-label-md px-4 py-2 hover:bg-surface-container-highest transition-all rounded-lg">Cancel</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors group bg-surface-container-low/20">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary font-bold text-title-md">
+                                        JB
+                                    </div>
+<div>
+<p class="font-bold text-on-surface text-title-md">James Bennett</p>
+<p class="text-body-sm text-secondary opacity-70">james.bennett@techflow.io</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-semibold text-on-surface">TechFlow Solutions</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest overflow-hidden ring-1 ring-outline-variant/30">
+<img alt="Host Profile" data-alt="Portrait of a young male architect in a contemporary creative studio with minimalist white furniture and soft natural lighting. Professional, warm, and inviting aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHRxjDgsWKPbYpj8PMEslMlvfH6bK9j26LV1se_EZHpluMB83-eBOiM9Bto68Z0UNkB7KGh6tbX-LbNPi5eBd1ExcJnbjQEgOzDiR2TujIo9Im08-Yh_bapBc7XoPBzG0uoBnyqkkpLHQjq4uqTP-dWr67330n6xO3U_wlEtZRrnv_Cb0ZZ6gHXfMmzOIcDyGVnQOJ1sZQI0BGvo63gtrZ0YAMyVlGiC4AdFDkoJ91GtpVLHcBuEpT9IeCBZt6U14YLQ21dPMLoyL_"/>
+</div>
+<span class="text-on-surface font-medium">Marcus Thorne</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface font-medium">10:15 AM</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-sm font-bold uppercase tracking-tight">Pending</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center justify-end gap-3">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-5 py-2 rounded-lg font-bold text-label-md shadow-md active:scale-95 transition-all opacity-40 cursor-not-allowed">Check In</button>
+<button class="text-secondary font-semibold text-label-md px-4 py-2 hover:bg-surface-container-highest transition-all rounded-lg">Cancel</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary font-bold text-title-md">
+                                        EL
+                                    </div>
+<div>
+<p class="font-bold text-on-surface text-title-md">Eleanor Lang</p>
+<p class="text-body-sm text-secondary opacity-70">e.lang@vanguard.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-semibold text-on-surface">Vanguard Global</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest overflow-hidden ring-1 ring-outline-variant/30">
+<img alt="Host Profile" data-alt="Professional profile photo of a female executive against a clean limestone wall. Bright, high-end editorial lighting, corporate chic style, very modern and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGoWBdA9kKayMyQzpVM-Eaf9uVqxjFygI_7RoqwiK0lyUSgjWdvQSFEpsypMDFjnpps-8JSz7uBZmev-bx-m9gaEVWhpe5FIbynbTvRGC2lPXq_JhBJVs7GzEQDeIfc9mGJoHtc0t0kRPBiI3PGSVtUmuj8CTKZqpBC9KlngLlFYgYBthCRdxpIPFSS0eidI4TRVjfmSwCHaF5zCvBnbGtluOgrHplYoBfRHGC8xZX8cY8FBfzR6OtAqq1FBeau02Bg4Nr_Jsqxa5e"/>
+</div>
+<span class="text-on-surface font-medium">Elena Rodriguez</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface font-medium">11:00 AM</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm font-bold uppercase tracking-tight">Confirmed</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center justify-end gap-3">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-5 py-2 rounded-lg font-bold text-label-md shadow-md active:scale-95 transition-all">Check In</button>
+<button class="text-secondary font-semibold text-label-md px-4 py-2 hover:bg-surface-container-highest transition-all rounded-lg">Cancel</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group bg-surface-container-low/20">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed-variant font-bold text-title-md">
+                                        KH
+                                    </div>
+<div>
+<p class="font-bold text-on-surface text-title-md">Kevin Hudson</p>
+<p class="text-body-sm text-secondary opacity-70">k.hudson@architex.org</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-semibold text-on-surface">Architex Partners</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest overflow-hidden ring-1 ring-outline-variant/30">
+<img alt="Host Profile" data-alt="Corporate headshot of a middle-aged male manager in a luxury high-rise office lobby. Warm natural light and architectural shadows. Professional, trustworthy, and sophisticated image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoFFY6lgF9Sb1lr4d-K-GMQ7FCRRZohwCAQVNOSqq2jy6SKBkXKtiN96cSmEKmq-hiOM3eOdxtnhKzMsDdEyWm_D66aYu3zPp7OhsX-Lob19AGnyRkNujYm-elz34cw80-PI2XmVC3m34czh9Cg-68U4d_4Qfft4Oq4na96SJ2SHP8dpSHcyBHIRR5fPkraWrznkcp4z1Jjnb2QPb_hp8TYZCAKllzUd8xzmioqouoRauw2IVQzlCOswKn5zZgUoEh9TiOSA1_QKbs"/>
+</div>
+<span class="text-on-surface font-medium">David Chen</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface font-medium">01:45 PM</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm font-bold uppercase tracking-tight">Confirmed</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center justify-end gap-3">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-5 py-2 rounded-lg font-bold text-label-md shadow-md active:scale-95 transition-all">Check In</button>
+<button class="text-secondary font-semibold text-label-md px-4 py-2 hover:bg-surface-container-highest transition-all rounded-lg">Cancel</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination/Footer Placeholder -->
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-low/30 border-t border-outline-variant/10">
+<p class="text-body-sm text-secondary opacity-60">Showing 1-4 of 24 appointments</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-highest transition-colors text-secondary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-container text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-highest transition-colors text-secondary font-semibold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-highest transition-colors text-secondary font-semibold">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-highest transition-colors text-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Suppress if needed, but useful for new appointments here) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-50">
+<span class="material-symbols-outlined text-[32px]">calendar_add_on</span>
+</button>
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout Confirmed - The Architectural Concierge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb693",
+                        "on-surface": "#251913",
+                        "tertiary": "#005ab4",
+                        "surface-container-low": "#fff1eb",
+                        "secondary-fixed": "#d1e4fb",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#091d2e",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#aac7ff",
+                        "surface-tint": "#a04100",
+                        "surface-container-high": "#fbe3da",
+                        "secondary-container": "#cfe2f9",
+                        "outline": "#8c7166",
+                        "tertiary-fixed": "#d6e3ff",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-container": "#526478",
+                        "on-surface-variant": "#584238",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "inverse-surface": "#3b2d27",
+                        "secondary": "#4e6073",
+                        "primary-container": "#c45100",
+                        "on-tertiary-container": "#fefcff",
+                        "surface-bright": "#fff8f6",
+                        "outline-variant": "#e0c0b2",
+                        "tertiary-container": "#0073e1",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "primary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed": "#001b3e",
+                        "on-secondary-fixed-variant": "#36485b",
+                        "primary": "#9c3f00",
+                        "background": "#fff8f6",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#f5ded4",
+                        "surface": "#fff8f6",
+                        "surface-container": "#ffeae1",
+                        "on-primary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#00458d",
+                        "surface-container-highest": "#f5ded4",
+                        "on-background": "#251913",
+                        "on-primary-fixed": "#351000",
+                        "surface-dim": "#ecd5cc",
+                        "inverse-on-surface": "#ffede6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .success-gradient {
+            background: linear-gradient(135deg, #9c3f00 0%, #c45100 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Shell -->
+<header class="bg-[#fff8f6] dark:bg-[#1a1c1e] flex justify-between items-center px-16 py-8 w-full sticky top-0 z-50">
+<div class="text-2xl font-black text-[#9c3f00] dark:text-[#ffdbcc] tracking-tighter font-headline">
+            The Concierge
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<button class="text-[#4e6073] dark:text-[#a0acbd] hover:opacity-80 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</button>
+<button class="text-[#4e6073] dark:text-[#a0acbd] hover:opacity-80 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-[#4e6073] dark:text-[#a0acbd] hover:opacity-80 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 lg:px-16 py-12">
+<!-- Background Architectural Motif (Asymmetric whitespace balance) -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden flex justify-end items-start opacity-5">
+<div class="w-1/2 h-full bg-primary-fixed translate-x-1/4 -skew-x-12"></div>
+</div>
+<div class="relative w-full max-w-4xl flex flex-col items-center">
+<!-- Centered Success Visual -->
+<div class="mb-12 flex flex-col items-center text-center">
+<div class="w-32 h-32 rounded-full success-gradient flex items-center justify-center mb-8 shadow-2xl">
+<span class="material-symbols-outlined text-on-primary text-6xl" style="font-variation-settings: 'FILL' 1;">logout</span>
+</div>
+<h1 class="text-5xl font-extrabold tracking-tight text-on-surface mb-4 font-display">
+                    Checkout Successful
+                </h1>
+<p class="text-xl text-secondary font-medium tracking-wide">
+                    Visitor departure has been logged.
+                </p>
+</div>
+<!-- Summarized Card (The "Architectural" Centerpiece) -->
+<div class="w-full max-w-2xl bg-surface-container rounded-xl p-12 shadow-sm relative overflow-hidden">
+<!-- Subtle Gradient Accent -->
+<div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-16">
+<div class="flex flex-col gap-1">
+<span class="text-secondary text-sm font-bold uppercase tracking-widest opacity-60">Visitor</span>
+<span class="text-2xl font-bold text-on-surface">Eleanor Sterling</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-secondary text-sm font-bold uppercase tracking-widest opacity-60">Company</span>
+<span class="text-2xl font-bold text-on-surface">Sterling &amp; Co.</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-secondary text-sm font-bold uppercase tracking-widest opacity-60">Host Visited</span>
+<span class="text-2xl font-bold text-on-surface">Julian Vance</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-secondary text-sm font-bold uppercase tracking-widest opacity-60">Check-out Time</span>
+<span class="text-2xl font-bold text-on-surface">14:42 PM</span>
+</div>
+</div>
+<!-- Subtle Decorative Element -->
+<div class="mt-12 flex items-center gap-4 text-primary opacity-30">
+<span class="h-px flex-grow bg-primary"></span>
+<span class="material-symbols-outlined">corporate_fare</span>
+<span class="h-px flex-grow bg-primary"></span>
+</div>
+</div>
+<!-- Signature Component: Digital Mirror -->
+<div class="mt-12 w-full max-w-sm">
+<div class="backdrop-blur-xl bg-surface-variant/60 rounded-xl p-6 border border-white/20 flex items-center gap-6">
+<img alt="Visitor portrait" class="w-20 h-20 rounded-lg object-cover grayscale brightness-90" data-alt="A high-end professional portrait of a woman with a confident smile, set against a blurred corporate lobby with floor-to-ceiling windows. The lighting is soft and natural, reflecting the warm primary orange tones of the Architectural Concierge design system. The composition is clean and modern, emphasizing a premium hospitality atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVVPKoULslyoVgk-ysfOp3odi3lSXJ53fhToYupRVwp209-3q2-h0sJQ6ASl2DMBOK1rnFxad8gPkU6936l9pKApK8UEonrpi7PxkUFbuSP-yHO4faPWP1B0AZgKuzY1yFpfj2zBEM5s1Hv6qy20GUscM4tbZS2ea4RQ7CTKcAtZ9WXhR-NgQna8hQeOwY5ZX-k1pILxhOkcca_6J10rP7rao5cLvCkUPGvkabjwmd2YROnI-1vQhFrTygCA-DQJ6u_CJJqdBjSgev"/>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-secondary uppercase tracking-tighter">Digital Pass Revoked</span>
+<span class="text-lg font-bold text-on-surface leading-tight">Visitor ID #884192</span>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-16 w-full max-w-sm">
+<button class="w-full py-5 rounded-lg success-gradient text-on-primary text-xl font-bold tracking-tight shadow-xl hover:opacity-90 active:scale-95 transition-all duration-200 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">dashboard</span>
+                    Back to Dashboard
+                </button>
+<button class="w-full mt-4 py-3 text-primary font-bold hover:bg-surface-container-low rounded-lg transition-colors">
+                    Log Feedback
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<div class="h-2 w-full bg-surface-container-low flex">
+<div class="h-full w-1/3 bg-primary opacity-20"></div>
+<div class="h-full w-2/3"></div>
+</div>
+</body></html>

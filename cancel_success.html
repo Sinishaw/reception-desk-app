@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appointment Canceled - Concierge Desk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#ffeae1",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#36485b",
+                    "tertiary-fixed": "#d6e3ff",
+                    "primary-fixed": "#ffdbcc",
+                    "surface-container-highest": "#f5ded4",
+                    "inverse-surface": "#3b2d27",
+                    "inverse-on-surface": "#ffede6",
+                    "surface-tint": "#a04100",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "surface-variant": "#f5ded4",
+                    "on-surface-variant": "#584238",
+                    "tertiary-fixed-dim": "#aac7ff",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-container": "#fefcff",
+                    "surface-container-low": "#fff1eb",
+                    "secondary": "#4e6073",
+                    "secondary-fixed-dim": "#b5c8df",
+                    "on-secondary": "#ffffff",
+                    "primary": "#9c3f00",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#351000",
+                    "surface-container-high": "#fbe3da",
+                    "on-secondary-container": "#526478",
+                    "error": "#ba1a1a",
+                    "primary-container": "#c45100",
+                    "outline": "#8c7166",
+                    "on-tertiary-fixed-variant": "#00458d",
+                    "on-background": "#251913",
+                    "surface-bright": "#fff8f6",
+                    "surface": "#fff8f6",
+                    "on-tertiary-fixed": "#001b3e",
+                    "error-container": "#ffdad6",
+                    "background": "#fff8f6",
+                    "tertiary-container": "#0073e1",
+                    "surface-dim": "#ecd5cc",
+                    "secondary-container": "#cfe2f9",
+                    "outline-variant": "#e0c0b2",
+                    "on-surface": "#251913",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb693",
+                    "secondary-fixed": "#d1e4fb",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-secondary-fixed": "#091d2e",
+                    "tertiary": "#005ab4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "display": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .primary-gradient {
+            background: linear-gradient(135deg, #9c3f00 0%, #c45100 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 234, 225, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen overflow-hidden">
+<!-- SideNavBar (The Anchor) -->
+<aside class="hidden md:flex flex-col h-screen w-80 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container py-12 pl-16 pr-8 z-50">
+<div class="mb-12">
+<h1 class="text-headline-md font-headline font-extrabold text-on-surface">Management</h1>
+<p class="text-secondary font-body text-body-lg">Architectural Concierge</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Navigation Items Mapping from JSON -->
+<a class="text-secondary hover:text-on-surface px-6 py-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body text-body-lg font-medium">Dashboard</span>
+</a>
+<a class="text-secondary hover:text-on-surface px-6 py-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-300" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body text-body-lg font-medium">Visitor Log</span>
+</a>
+<!-- Active State: Staff Management -->
+<a class="bg-surface-container-highest text-primary font-bold rounded-lg px-6 py-4 flex items-center gap-4 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-body text-body-lg font-medium">Staff Management</span>
+</a>
+<a class="text-secondary hover:text-on-surface px-6 py-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-300" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body text-body-lg font-medium">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/10">
+<button class="w-full primary-gradient text-on-primary font-bold py-4 px-6 rounded-lg mb-6 flex items-center justify-center gap-2 shadow-lg">
+<span class="material-symbols-outlined">add</span>
+                New Appointment
+            </button>
+<div class="space-y-1">
+<a class="text-secondary hover:text-on-surface px-6 py-2 flex items-center gap-4 text-body-md" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Help Center
+                </a>
+<a class="text-secondary hover:text-on-surface px-6 py-2 flex items-center gap-4 text-body-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Log Out
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-80 min-h-screen relative overflow-y-auto">
+<!-- TopAppBar (Execution of JSON style_shell_layout) -->
+<header class="flex justify-between items-center w-full px-16 py-6 max-w-[1440px] mx-auto bg-surface dark:bg-surface-dim">
+<div class="flex items-center gap-4">
+<span class="text-display-md font-headline font-black text-primary dark:text-primary-fixed-dim tracking-tighter">Concierge Desk</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-highest border-none rounded-full py-2 pl-12 pr-6 w-64 focus:ring-2 focus:ring-primary text-on-surface" placeholder="Search visitors..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="Administrator profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-high" data-alt="A professional headshot of a corporate administrator in a modern office environment. The person is wearing a tailored grey suit with a friendly yet professional expression. The background is softly blurred, showing hints of a glass-walled conference room and warm architectural lighting, maintaining a premium, high-contrast light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGGlxssrVDALYosp_81ks961RF2J24JKHmS1zvtjdlisX1qjRVA837WwFKREtY8mpuLhmQ-kRaMmyCBErUKQN9ERnpLtk0uL55xbGw7rRMepr-AgPBs1RjzCt1T4WZNMdHz83DxdYIRo-edfYxFNa6UL-TSnMCTGJNZE1-TDcBq5odEQaq01KzNQLEcGXSiW6Tut5oF0R0Ljx3ejRcVrs5uG1DIg8i6tdEHlphk45L_nTEHiRyT14LFLIUTvZxIrXhR7tUwJmiXYbT"/>
+</div>
+</div>
+</header>
+<!-- Confirmation Content (Centered Task-Focused Section) -->
+<section class="max-w-4xl mx-auto px-6 py-12 md:py-24 flex flex-col items-center justify-center text-center">
+<!-- Success/Info Icon with Tonal Layering -->
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center mb-8 relative">
+<div class="absolute inset-0 rounded-full animate-pulse bg-primary/5"></div>
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'wght' 500;">cancel</span>
+</div>
+<h2 class="text-display-md font-headline font-black text-on-surface tracking-tight mb-4">Appointment Canceled</h2>
+<p class="text-secondary text-body-lg max-w-lg mb-12">The appointment has been successfully removed from the schedule. A notification has been sent to the host and the visitor.</p>
+<!-- Visitor Badge Preview Styled Card -->
+<div class="glass-panel w-full max-w-md rounded-xl p-8 border border-outline-variant/15 text-left shadow-xl mb-12">
+<div class="flex items-center gap-6 mb-8">
+<img alt="Visitor Photo" class="w-20 h-20 rounded-lg object-cover grayscale opacity-50" data-alt="A clean, minimalist portrait of a professional visitor in a brightly lit studio. The subject is a young male professional with a neutral expression, wearing a crisp white shirt. The lighting is high-key and soft, perfectly aligning with the architectural concierge brand's warm and sophisticated light-mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo1aqt3JnplMgKeq35qWllEvLQ9ENnay007pm83xGE1U-cE2zHD_vyJtFUljdGcrc_kUi9rmIjm4NDbnJcWSYkNlgc14z7m3aIwr2grI7WtGOM2obY1RCvVeHQkbAGrlveqxE1okNAM24sr-KdCJkBwkOOTktj_GPHZ7sJoOGZ8UXkIsTnITTvGCk8sHFNtQKYVVVI6Weg5MH6WLSIYDK3ktnDnrWgIqSJITxNJDz3nG9yujKocFmxo-GsWt2RXNolFPXHvEsNt2iO"/>
+<div>
+<span class="text-label-md font-bold uppercase tracking-widest text-primary/60 block mb-1">Canceled Entry</span>
+<h3 class="text-title-lg font-headline font-bold text-on-surface">Alexander Sterling</h3>
+<p class="text-secondary text-body-md">Senior Architect • Design Collective</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-3 border-b border-outline-variant/10">
+<span class="text-secondary font-medium">Host</span>
+<span class="text-on-surface font-semibold">Sarah Jenkins</span>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-outline-variant/10">
+<span class="text-secondary font-medium">Scheduled Time</span>
+<span class="text-on-surface font-semibold">Oct 24, 2023 • 10:30 AM</span>
+</div>
+<div class="flex items-center justify-between py-3">
+<span class="text-secondary font-medium">Location</span>
+<span class="text-on-surface font-semibold">North Wing • Room 402</span>
+</div>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+<button class="primary-gradient text-on-primary font-bold py-4 px-10 rounded-lg shadow-lg hover:scale-[1.02] active:scale-95 transition-all w-full sm:w-auto">
+                    Return to Appointments
+                </button>
+<button class="bg-secondary-container text-on-secondary-container font-bold py-4 px-10 rounded-lg hover:bg-secondary-container/80 transition-all w-full sm:w-auto">
+                    Schedule New Appointment
+                </button>
+</div>
+<button class="mt-8 text-primary font-bold hover:underline py-2">
+                Download Cancellation Receipt (PDF)
+            </button>
+</section>
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-secondary-container/30 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+</main>
+</body></html>

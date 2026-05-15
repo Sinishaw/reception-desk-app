@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Architectural Concierge | Reception Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#36485b",
+                        "surface-dim": "#ecd5cc",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#cfe2f9",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed": "#d1e4fb",
+                        "primary-container": "#c45100",
+                        "on-primary-fixed": "#351000",
+                        "inverse-surface": "#3b2d27",
+                        "primary-fixed-dim": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#aac7ff",
+                        "on-tertiary-container": "#fefcff",
+                        "outline-variant": "#e0c0b2",
+                        "on-background": "#251913",
+                        "surface-container-highest": "#f5ded4",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#fff1eb",
+                        "outline": "#8c7166",
+                        "on-tertiary-fixed-variant": "#00458d",
+                        "background": "#fff8f6",
+                        "secondary": "#4e6073",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#001b3e",
+                        "tertiary": "#005ab4",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#f5ded4",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ffede6",
+                        "tertiary-container": "#0073e1",
+                        "surface-bright": "#fff8f6",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "primary": "#9c3f00",
+                        "on-surface-variant": "#584238",
+                        "surface": "#fff8f6",
+                        "on-surface": "#251913",
+                        "tertiary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#526478",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ffeae1",
+                        "surface-container-high": "#fbe3da",
+                        "on-secondary-fixed": "#091d2e",
+                        "on-primary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-98:active { transform: scale(0.98); }
+        .active-nav-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex overflow-hidden">
+<!-- SideNavBar (The Anchor) - Styled as per Reporting & Analytics Dashboard -->
+<aside class="hidden md:flex flex-col h-screen w-80 bg-surface-container-low dark:bg-surface-dim py-8 px-6 gap-y-6 fixed left-0 top-0 z-40 border-r border-outline-variant/10">
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-lg">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-on-surface dark:text-on-surface-variant leading-tight">Concierge Onyx</h1>
+<p class="font-semibold text-xs text-secondary">Architectural Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-y-2 mt-8">
+<!-- Active Item: Dashboard -->
+<div class="flex items-center gap-4 px-4 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl shadow-lg scale-100 active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined active-nav-icon" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-semibold text-sm">Dashboard</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">recent_actors</span>
+<span class="font-semibold text-sm">Visitor Log</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-semibold text-sm">Staff Management</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-semibold text-sm">Analytics</span>
+</div>
+</nav>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full py-4 px-6 bg-secondary-container text-on-secondary-container font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-secondary-container/80 transition-all shadow-sm">
+<span class="material-symbols-outlined">add_circle</span>
+                New Registration
+            </button>
+<div class="pt-4 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-4 text-secondary dark:text-secondary-fixed-dim px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-4 text-secondary dark:text-secondary-fixed-dim px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Cluster -->
+<main class="flex-1 md:ml-80 flex flex-col h-screen overflow-y-auto">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-16 h-24 sticky top-0 z-10 bg-[#fff8f6] dark:bg-[#1a110d] font-['Manrope'] tracking-tight shadow-[0_24px_40px_rgba(37,25,19,0.05)]">
+<div>
+<h1 class="text-2xl font-bold tracking-tighter text-[#251913] dark:text-[#fff8f6]">The Architectural Concierge</h1>
+</div>
+<div class="flex items-center gap-8">
+<div class="relative flex items-center bg-surface-container rounded-full px-6 py-2.5 w-80 group focus-within:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-secondary mr-3 text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-secondary/50" placeholder="Global Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-3 text-secondary hover:bg-surface-container-highest/50 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-3 text-secondary hover:bg-surface-container-highest/50 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-10 w-px bg-outline-variant/30 mx-2"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 overflow-hidden">
+<img alt="Receptionist profile picture" class="w-full h-full object-cover" data-alt="A professional portrait of a receptionist with a warm and welcoming expression, set against a blurred corporate lobby background. The lighting is soft and natural, reflecting the high-end hospitality aesthetic. The overall mood is professional and trustworthy, with a focus on human connection in a modern architectural environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWGSocSFV3zUnzN3wcUW8rVnyG8c0LHvOwVTRymrwDKTDcg61KfAJvA-QZ5Om_hKSOKXP8KgEn9h1YmcmSlb1SbgObEtfnwoTQyaZcCHrihjZyLhTvPlDLY3ZB0B0TJqHfP66OzCUD5VcwJ5SQ2iraX6vURSn2Ol_pcfI7z5lh_l7nj237DOF91QswRul3S8X0k6QWfLzu8LzCfAd-M_PkjeIaSQ2ilo4EhuzduDfc7FUSph9kZxw91jvwSzaYPKWNelTTnzrtckDz"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-16 space-y-12">
+<!-- Section 1: Dashboard Integrated Functions (Check-In, Checkout, History) -->
+<section class="bg-surface-container-low rounded-[3rem] p-2 overflow-hidden shadow-sm">
+<!-- Main Tabs Header -->
+<div class="flex gap-2 p-4 justify-between items-center">
+<div class="flex gap-2" id="tabs-container">
+<button class="px-8 py-4 rounded-full bg-white text-primary font-bold shadow-sm">Visitor History</button>
+<button class="px-8 py-4 rounded-full text-secondary hover:bg-surface-container transition-colors font-medium">Appointments</button>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">person_add</span>
+<span>Manual Check In</span>
+</button>
+</div>
+<div class="bg-white rounded-[2.5rem] p-10">
+<!-- Sub-tabs and Search Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+<div class="flex bg-surface-container-low p-1.5 rounded-full w-fit">
+<button class="px-6 py-2.5 rounded-full bg-white text-on-surface text-sm font-bold shadow-sm">Active</button>
+<button class="px-6 py-2.5 rounded-full text-secondary text-sm font-medium hover:text-primary transition-colors">Historical</button>
+</div>
+<div class="relative">
+<input class="w-full md:w-96 pl-12 pr-6 py-4 bg-surface-container-highest border-none rounded-2xl focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Search visitors by name or company..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary/40">filter_list</span>
+</div>
+</div>
+<!-- Visitor Table (Check-In/Checkout Actions Integrated) -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-4">
+<thead>
+<tr class="text-secondary/60 text-xs font-extrabold uppercase tracking-widest px-4">
+<th class="pb-4 pl-6">Visitor Name</th>
+<th class="pb-4">Company</th>
+<th class="pb-4">Host</th>
+<th class="pb-4">Check-in Time</th>
+<th class="pb-4">Status</th>
+<th class="pb-4 pr-6">Actions</th>
+</tr>
+</thead>
+<tbody class="space-y-4">
+<tr class="group hover:bg-surface-container-low transition-colors rounded-2xl">
+<td class="py-6 pl-6 rounded-l-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-secondary font-bold text-sm">EA</div>
+<div class="font-bold text-on-surface">Elena Aris</div>
+</div>
+</td>
+<td class="py-6 text-sm text-secondary font-medium">Lumina Studios</td>
+<td class="py-6 text-sm text-secondary">Marcus Vane</td>
+<td class="py-6 text-sm text-secondary">09:14 AM</td>
+<td class="py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2"></span>
+                                            On-site
+                                        </span>
+</td>
+<td class="py-6 pr-6 rounded-r-2xl">
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary-container text-on-secondary-container hover:bg-secondary/20 transition-colors rounded-xl text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Check Out</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-colors rounded-2xl">
+<td class="py-6 pl-6 rounded-l-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-sm">JD</div>
+<div class="font-bold text-on-surface">Jonathan Doe</div>
+</div>
+</td>
+<td class="py-6 text-sm text-secondary font-medium">Skyline Urbanism</td>
+<td class="py-6 text-sm text-secondary">Sarah Jenkins</td>
+<td class="py-6 text-sm text-secondary">10:45 AM</td>
+<td class="py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2"></span>
+                                            On-site
+                                        </span>
+</td>
+<td class="py-6 pr-6 rounded-r-2xl">
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary-container text-on-secondary-container hover:bg-secondary/20 transition-colors rounded-xl text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Check Out</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-colors rounded-2xl">
+<td class="py-6 pl-6 rounded-l-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary font-bold text-sm">MW</div>
+<div class="font-bold text-on-surface">Michael Wu</div>
+</div>
+</td>
+<td class="py-6 text-sm text-secondary font-medium">Apex Structural</td>
+<td class="py-6 text-sm text-secondary">David K.</td>
+<td class="py-6 text-sm text-secondary">11:02 AM</td>
+<td class="py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-bold border border-orange-100">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500 mr-2"></span>
+                                            In Transit
+                                        </span>
+</td>
+<td class="py-6 pr-6 rounded-r-2xl">
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary-container text-on-secondary-container hover:bg-secondary/20 transition-colors rounded-xl text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Check Out</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 3: Appointments List (Upcoming) -->
+<section class="pb-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-sm font-extrabold uppercase tracking-[0.2em] text-primary/60">Upcoming Appointments</h2>
+<button class="text-sm font-bold text-primary hover:underline underline-offset-4">View All Calendar</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Appointment Card 1 -->
+<div class="bg-surface-container rounded-3xl p-8 transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">calendar_today</span>
+</div>
+<span class="text-sm font-bold text-secondary">1:30 PM</span>
+</div>
+<h4 class="text-xl font-bold mb-1">Adrian Sterling</h4>
+<p class="text-sm text-secondary mb-8">Host: Catherine Shaw • Level 4</p>
+<button class="w-full py-4 bg-white text-on-surface font-bold rounded-2xl shadow-sm hover:shadow-md transition-shadow active:scale-95">
+                            Pre-check In
+                        </button>
+</div>
+<!-- Appointment Card 2 -->
+<div class="bg-surface-container rounded-3xl p-8 transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">calendar_today</span>
+</div>
+<span class="text-sm font-bold text-secondary">2:45 PM</span>
+</div>
+<h4 class="text-xl font-bold mb-1">Beatrice Thorne</h4>
+<p class="text-sm text-secondary mb-8">Host: Gregory Miles • Boardroom A</p>
+<button class="w-full py-4 bg-white text-on-surface font-bold rounded-2xl shadow-sm hover:shadow-md transition-shadow active:scale-95">
+                            Pre-check In
+                        </button>
+</div>
+<!-- Appointment Card 3 -->
+<div class="bg-surface-container rounded-3xl p-8 transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-6">
+<div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">calendar_today</span>
+</div>
+<span class="text-sm font-bold text-secondary">4:00 PM</span>
+</div>
+<h4 class="text-xl font-bold mb-1">Silas Thorne</h4>
+<p class="text-sm text-secondary mb-8">Host: Design Committee • Gallery 2</p>
+<button class="w-full py-4 bg-white text-on-surface font-bold rounded-2xl shadow-sm hover:shadow-md transition-shadow active:scale-95">
+                            Pre-check In
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

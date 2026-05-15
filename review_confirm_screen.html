@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review &amp; Confirm | Reception Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#091d2e",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#fbe3da",
+                        "secondary-container": "#cfe2f9",
+                        "outline": "#8c7166",
+                        "tertiary-fixed-dim": "#aac7ff",
+                        "surface-tint": "#a04100",
+                        "inverse-primary": "#ffb693",
+                        "on-surface": "#251913",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#005ab4",
+                        "surface-container-low": "#fff1eb",
+                        "secondary-fixed": "#d1e4fb",
+                        "surface-bright": "#fff8f6",
+                        "primary-container": "#c45100",
+                        "on-tertiary-container": "#fefcff",
+                        "outline-variant": "#e0c0b2",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-container": "#526478",
+                        "on-surface-variant": "#584238",
+                        "tertiary-fixed": "#d6e3ff",
+                        "secondary": "#4e6073",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "inverse-surface": "#3b2d27",
+                        "surface-variant": "#f5ded4",
+                        "surface": "#fff8f6",
+                        "surface-container": "#ffeae1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#00458d",
+                        "on-primary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#0073e1",
+                        "primary": "#9c3f00",
+                        "background": "#fff8f6",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "primary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed": "#001b3e",
+                        "on-secondary-fixed-variant": "#36485b",
+                        "inverse-on-surface": "#ffede6",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-highest": "#f5ded4",
+                        "on-background": "#251913",
+                        "surface-dim": "#ecd5cc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-card {
+            background: rgba(245, 222, 212, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<div class="flex min-h-screen">
+<!-- SideNavBar from SCREEN_26 -->
+<aside class="hidden md:flex flex-col h-screen w-80 bg-surface-container-low dark:bg-surface-dim py-8 px-6 gap-y-6 fixed left-0 top-0 z-40">
+<div class="flex items-center gap-4 px-2">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-on-surface leading-tight">Concierge Onyx</h1>
+<p class="font-semibold text-xs text-secondary tracking-wider uppercase">Architectural Concierge</p>
+</div>
+</div>
+<nav class="flex flex-col gap-y-2 mt-8">
+<!-- Active Item: Dashboard -->
+<div class="flex items-center gap-4 px-4 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl shadow-lg scale-100 active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined active-nav-icon" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-bold">Dashboard</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">recent_actors</span>
+<span class="font-semibold">Visitor Log</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-semibold">Staff Management</span>
+</div>
+<div class="group flex items-center gap-4 px-4 py-3 text-secondary hover:text-primary hover:bg-surface-container-highest transition-all duration-200 rounded-xl cursor-pointer scale-100 active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-semibold">Analytics</span>
+</div>
+</nav>
+<div class="mt-auto">
+<button class="w-full py-4 px-6 bg-secondary-container text-on-secondary-container font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-secondary-container/80 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    New Registration
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-80">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-10 h-24 w-full bg-surface sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-black text-[#4e6073] font-['Manrope'] tracking-tight">Reception Hub</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#4e6073] hover:bg-[#ffeae1] transition-colors p-2 rounded-full Active: scale-95 duration-200">help</button>
+<button class="material-symbols-outlined text-[#4e6073] hover:bg-[#ffeae1] transition-colors p-2 rounded-full Active: scale-95 duration-200">language</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<div class="p-10">
+<div class="max-w-6xl mx-auto grid grid-cols-12 gap-8 items-start">
+<!-- Left Column: Summary Details -->
+<div class="col-span-12 lg:col-span-7 space-y-10">
+<section>
+<h1 class="text-5xl font-extrabold text-on-surface tracking-tight mb-4">Review &amp; Confirm</h1>
+<p class="text-secondary text-lg leading-relaxed max-w-xl">
+                                Please verify the visitor information and host details before finalizing the architectural access registration.
+                            </p>
+</section>
+<div class="grid grid-cols-1 gap-6">
+<!-- Visitor Info Card -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-xs font-black uppercase tracking-widest text-primary">Visitor Details</span>
+<span class="material-symbols-outlined text-outline-variant">person</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="text-sm text-on-surface-variant font-medium">Full Name</label>
+<p class="text-2xl font-bold text-on-surface">Alexander Sterling</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-sm text-on-surface-variant font-medium">Email Address</label>
+<p class="text-on-surface font-semibold">alexander@example.com</p>
+</div>
+<div>
+<label class="text-sm text-on-surface-variant font-medium">Purpose of Visit</label>
+<p class="text-on-surface font-semibold">Quarterly Architecture Review</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Host Info Card -->
+<div class="bg-surface-container p-8 rounded-xl space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-xs font-black uppercase tracking-widest text-primary">Assigned Host</span>
+<span class="material-symbols-outlined text-outline-variant">badge</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-secondary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female design executive with a warm, welcoming expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApNi7lDfYwwHt6RHYtlUH3uDdNHVIMSRGN99bxFpoQPKYsnvplGjTCSyd4FSqQSwi6rQheLYJKABoUz1hcqIeUmgt1F0CkhIbg1OIaSmScZ_0DOJgKPLT0P0TL5GCrDNQEd4pT4djkydt36oLNWRnTLp_xY2XMrYFQIK5hZ0RGLx_TKU3feJ5byRLQCyI9Pg6YN6boCbV692Zj4U55wb1a1TUW1H-a3mbiq5ds1xhYsoLACsNyY-71KWy-fqlnTuveBx3FI8-QvL6I"/>
+</div>
+<div>
+<p class="text-xl font-bold text-on-surface">Sarah Jenkins</p>
+<p class="text-secondary font-medium">Design Lead &amp; Architectural Strategy</p>
+</div>
+</div>
+</div>
+<!-- Visitor Signature Card -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+<div class="flex justify-between items-center">
+<label class="text-xs font-black uppercase tracking-widest text-primary">Visitor Signature</label>
+<button class="text-sm font-bold text-primary hover:text-primary-container underline transition-colors">Clear Signature</button>
+</div>
+<div class="relative w-full h-48 bg-white border border-outline-variant/30 rounded-xl cursor-crosshair overflow-hidden">
+<div class="absolute inset-0 flex flex-col justify-end p-8 pointer-events-none">
+<div class="w-full border-b border-surface-variant/50"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+<span class="material-symbols-outlined text-9xl">draw</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant/70 italic">By signing, you agree to the architectural firm's safety and confidentiality protocols.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Registration Input & Actions -->
+<div class="col-span-12 lg:col-span-5 space-y-8">
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface ml-1" for="tag-number">Assigned Tag Number</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl h-16 px-6 text-lg font-bold text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" id="tag-number" placeholder="e.g. ARCH-8829" type="text"/>
+</div>
+<div class="bg-white rounded-2xl border border-outline-variant/20 shadow-xl overflow-hidden">
+<div class="h-3 bg-primary w-full"></div>
+<div class="p-8 flex flex-col items-center text-center space-y-6">
+<div class="space-y-1">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-outline-variant">Visitor Card Preview</span>
+<h3 class="text-2xl font-extrabold text-on-surface">ALEXANDER STERLING</h3>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="px-4 py-1.5 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-xs font-bold tracking-wider uppercase">
+                                        Valid Today: Oct 24, 2023
+                                    </div>
+<div class="text-sm font-medium text-secondary">
+                                        Tag: <span class="text-on-surface font-bold">ARCH-8829</span>
+</div>
+</div>
+<div class="w-32 h-10 opacity-20">
+<span class="material-symbols-outlined text-4xl">barcode</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full h-16 bg-primary text-on-primary rounded-xl font-bold text-lg shadow-lg hover:bg-primary-container transition-all">
+                                Finalize Registration
+                            </button>
+<button class="w-full h-16 border-2 border-outline-variant text-on-surface-variant rounded-xl font-bold text-lg hover:bg-surface-container-low transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">edit</span>
+                                Edit Information
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

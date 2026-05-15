@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#c45100",
+                    "on-secondary-container": "#526478",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#d1e4fb",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#ffede6",
+                    "primary": "#9c3f00",
+                    "secondary": "#4e6073",
+                    "tertiary-container": "#0073e1",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#005ab4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "on-tertiary-fixed-variant": "#00458d",
+                    "tertiary-fixed": "#d6e3ff",
+                    "on-primary-fixed": "#351000",
+                    "primary-fixed": "#ffdbcc",
+                    "on-tertiary-container": "#fefcff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#f5ded4",
+                    "inverse-surface": "#3b2d27",
+                    "surface-dim": "#ecd5cc",
+                    "secondary-container": "#cfe2f9",
+                    "surface-bright": "#fff8f6",
+                    "on-secondary-fixed": "#091d2e",
+                    "on-background": "#251913",
+                    "surface": "#fff8f6",
+                    "on-surface": "#251913",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#e0c0b2",
+                    "surface-container-high": "#fbe3da",
+                    "surface-container-low": "#fff1eb",
+                    "surface-container-highest": "#f5ded4",
+                    "background": "#fff8f6",
+                    "surface-container": "#ffeae1",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#b5c8df",
+                    "inverse-primary": "#ffb693",
+                    "on-surface-variant": "#584238",
+                    "on-secondary-fixed-variant": "#36485b",
+                    "surface-tint": "#a04100",
+                    "outline": "#8c7166",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#aac7ff",
+                    "on-tertiary-fixed": "#001b3e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cta-gradient {
+            background: linear-gradient(135deg, #9c3f00 0%, #c45100 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 234, 225, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#fff8f6] dark:bg-[#1a110d] flex justify-between items-center w-full px-16 py-8 h-24 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-[#251913] dark:text-[#fff8f6]">Concierge</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#4e6073] dark:text-[#a5b4c1] hover:bg-[#ffeae1] dark:hover:bg-[#3d2b24] transition-colors p-2 rounded-full scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-[#4e6073] dark:text-[#a5b4c1] hover:bg-[#ffeae1] dark:hover:bg-[#3d2b24] transition-colors p-2 rounded-full scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen py-8 bg-surface-container-low dark:bg-surface-container-low w-72 left-0 sticky top-24 border-r border-outline-variant">
+<div class="px-8 mb-8">
+<h2 class="text-xl font-bold text-primary">Concierge</h2>
+<p class="text-xs text-on-surface-variant opacity-70 uppercase tracking-widest font-semibold mt-1">Management Portal</p>
+</div>
+<nav class="flex flex-col gap-1 px-4">
+<a class="bg-primary text-on-primary rounded-xl py-3 px-4 flex items-center gap-3 transition-all duration-200 font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+            Dashboard
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl py-3 px-4 flex items-center gap-3 transition-all duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="recent_actors">recent_actors</span>
+            Visitor Log
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl py-3 px-4 flex items-center gap-3 transition-all duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+            Staff Management
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-xl py-3 px-4 flex items-center gap-3 transition-all duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+            Analytics
+        </a>
+</nav>
+<div class="mt-auto px-4">
+<div class="bg-surface-container-high rounded-2xl p-4">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+                    JD
+                </div>
+<div>
+<p class="text-xs font-bold">John Doe</p>
+<p class="text-[10px] text-on-surface-variant">Front Desk Manager</p>
+</div>
+</div>
+<button class="w-full text-xs font-bold text-error hover:bg-error-container/20 py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">logout</span>
+                Sign Out
+            </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-8 md:p-16 max-w-7xl mx-auto">
+<div class="mb-12">
+<h1 class="font-headline font-extrabold text-4xl tracking-tight mb-2">Who are you visiting?</h1>
+<p class="text-secondary font-body">Search for your host or select from the list below to notify them of your arrival.</p>
+</div>
+<!-- Search Section -->
+<div class="mb-12">
+<div class="relative max-w-2xl">
+<span class="material-symbols-outlined absolute left-6 top-1/2 -translate-y-1/2 text-secondary" data-icon="search">search</span>
+<input class="w-full pl-16 pr-8 py-5 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-primary focus:bg-primary-fixed transition-all placeholder:text-secondary/50 text-lg" placeholder="Search by name or department..." type="text"/>
+</div>
+</div>
+<!-- Host Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Host Card 1 -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="professional woman in corporate attire smiling warmly against a soft office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiVXTQLG9H_VmtJQ4BsSHdV4-ibYwEHH5BPDb2GJ6BBeH3iy_n1sTXpI5fPMnpnymbNhiYGigpz_Hx8hP4ia-r_SPGrNPZQk5ky-Jg5x3n2I7sPs-Ci7b0FWwEhGMxNuBelauy_NXdob8ZEBIR6q9PWQvyfISH3FEKEv_c2rPdliumh1i5xKxsKVZPwxl2LiiOs34ugTitv5iARgepvMqnnRQi1Za70_OohWjSW9hqj6aACAujhPGoOzQ9m9wkizfQIpaisxJAGqrw"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-wider uppercase">Executive</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-1">Elena Rodriguez</h3>
+<p class="text-secondary text-sm mb-6">Operations Director</p>
+<button class="w-full cta-gradient text-on-primary font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform group-active:scale-95">
+                            Select Host
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Host Card 2 -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="middle-aged man with glasses and professional attire in a modern workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLRUoZqNPQELrQdU8aZtZikXnQ0FbsQeO9MhWY45-1of7soLsYAorl_0QIeDe8cF_Ojo29utk4amHnApqnhwyggCVLN6nQseoLbZoYitvxHJvVXKASMR_ft4CchqCoE876et5nCwXa3Awaet2Gx3kHBEmIBdpKdSoFB65wBSzwo036bdSJHtBbjNixjLctrDGsXhq0yuMz8yuoWo4nPRhuwvrzhZikG1VxgLQ0JAvRg0gY7rYxrJT61XnENAUhwOy73_0Syo9lgGno"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-wider uppercase">Technology</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-1">Marcus Thorne</h3>
+<p class="text-secondary text-sm mb-6">Chief Technology Officer</p>
+<button class="w-full cta-gradient text-on-primary font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform group-active:scale-95">
+                            Select Host
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Host Card 3 -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="cheerful young woman with curly hair wearing business casual clothing in a sunlit atrium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkvsucC2fGJVDalhN9vQe94ZUEvjqUNRKUxP0LZRAb-4Y9rIxJEgpc4w8ctVqixmTiPRvJcVo4C6YWEoxSu6yF0bZplaZ0s_a8rNvwRBea5njwy6l7l6Bryy0Sp8YUmw9az6IABxHFXWgHSFfsAu2kG5xQaMAwri31gCIuJaGLBCaU7pGeUwCixFocbNtvr5t1uBmyXBVsbXV1FnxXIVaS7MD4by509_XtWA-KSiQ-1xGtS3xxewEpJLuu-pQ-7sxHMRL4LQy0Zr7I"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-wider uppercase">Marketing</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-1">Sarah Jenkins</h3>
+<p class="text-secondary text-sm mb-6">Head of Brand Strategy</p>
+<button class="w-full cta-gradient text-on-primary font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform group-active:scale-95">
+                            Select Host
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Host Card 4 -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="distinguished professional man in a tailored suit leaning against a clean white wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUb8qvafh9IY_s944vFPAnk5FDy1WxuiV2h4mpj001icbzq6yICTtKDfACIxQHiuQvofGRcMuAXAn_PJq37wNRtUU0K3En9AOfrpsI2f4-qJ_OOKUTBUmZhX7p7p_hGKYUTKJf4Ee20SnSvekzglLkZ_L8ezfG53dsRXikqZGnB-bA3U8leCKz392n-gziyQBtBM9FBSzvcfTy-k4LVFXPiH24zkDuQ52wOi67qnMxQIXqHbtbPlvjGvNMqxWrr5XPDQO_MS4zPmha"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-wider uppercase">Legal</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-1">David Chen</h3>
+<p class="text-secondary text-sm mb-6">General Counsel</p>
+<button class="w-full cta-gradient text-on-primary font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform group-active:scale-95">
+                            Select Host
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Host Card 5 -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="confident young man smiling in a modern architectural building interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCilmF5ChR8Nc7iwRDpfHH1jvJ6VFNKtuyM0wPapJP2-QgnTCyzx4QpVbmrfscbZl8zC9nFkon-qsRmi9oZLIFkcjMYDyByyYqqnWeJJi5TcGJtGfyw2iXErpje5-I2huTN2YA1Sg9hQs2fDr9tJcfZ1KNkHU5PaklVkXvN6EP_dEdYPq-AD-lckFZlI8ntvMLFJVL8MIXFvznO1-iIXpJtSm_be7AK-47AAm3quPNMroRplmvJgDk2VzDH1EEagc3EA8o6oNI5Zxhw"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-wider uppercase">Engineering</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-1">Arjun Patel</h3>
+<p class="text-secondary text-sm mb-6">Lead Systems Architect</p>
+<button class="w-full cta-gradient text-on-primary font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform group-active:scale-95">
+                            Select Host
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Host Card 6 -->
+<div class="bg-surface-container rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-start justify-between mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="professional woman with a friendly expression in a clean studio lighting setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6lHCrSEJI3DBPgI-Es0B8RiAwXDmLc08dJwkdcM6CYQyneYcA9Yx-0pDE9NYeyhjgUxorTrwMbRyn5z-3AbWB4zVWef0J033_JY0kmGm43ozSyJOD4w_aTJK3ad85D0GHCpTVWDdY9yPUpd6iPnWheEYy-eeZwxOBZ9nuM27LCQgm16DYVdsajLJU5QVaJ5AP6FXhBbf4Zxb_GUNASd7m-WP1E55ysBJFxEudCNfUSc3JL3f_6No8h9sfr2motEDheh61i3iyoiz1"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-wider uppercase">Human Resources</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-1">Isabella Vane</h3>
+<p class="text-secondary text-sm mb-6">Talent Acquisition Manager</p>
+<button class="w-full cta-gradient text-on-primary font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform group-active:scale-95">
+                            Select Host
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State / Assistance CTA -->
+<div class="mt-20 glass-panel p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-outline-variant/10">
+<div class="flex items-center gap-6">
+<div class="bg-primary-fixed p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="text-xl font-bold">Can't find your host?</h4>
+<p class="text-secondary">Our front desk staff is ready to help you navigate.</p>
+</div>
+</div>
+<button class="border-2 border-primary text-primary font-bold py-3 px-8 rounded-lg hover:bg-primary/5 transition-colors">
+                    Request Assistance
+                </button>
+</div>
+</main>
+</div>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-low flex justify-around py-4 z-50">
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] mt-1 font-bold">Dashboard</span>
+</button>
+<button class="flex flex-col items-center text-secondary">
+<span class="material-symbols-outlined" data-icon="recent_actors">recent_actors</span>
+<span class="text-[10px] mt-1">Log</span>
+</button>
+<button class="flex flex-col items-center text-secondary">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="text-[10px] mt-1">Staff</span>
+</button>
+<button class="flex flex-col items-center text-secondary">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] mt-1">Analytics</span>
+</button>
+</nav>
+</body></html>
